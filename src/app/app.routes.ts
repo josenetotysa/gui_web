@@ -8,7 +8,6 @@ import { CriarComponent } from './pages/gerencia-bilhete/criar/criar.component';
 import { LiberarComponent } from './pages/gerencia-bilhete/liberar/liberar.component';
 import { ConsultarComponent } from './pages/gerencia-bilhete/consultar/consultar.component';
 import { CngPreExistenteComponent } from './pages/gerencia-bilhete/cng-pre-existente/cng-pre-existente.component';
-import { AUTO_STYLE } from '@angular/animations';
 
 export const routes: Routes = [
   // Rota de login (pública)
