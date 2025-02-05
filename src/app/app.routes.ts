@@ -8,6 +8,7 @@ import { CriarComponent } from './pages/gerencia-bilhete/criar/criar.component';
 import { LiberarComponent } from './pages/gerencia-bilhete/liberar/liberar.component';
 import { ConsultarComponent } from './pages/gerencia-bilhete/consultar/consultar.component';
 import { CngPreExistenteComponent } from './pages/gerencia-bilhete/cng-pre-existente/cng-pre-existente.component';
+import { ListarJanelaBroadcastComponent } from './pages/janela-broadcast/listar-janela-broadcast/listar-janela-broadcast.component';
 
 export const routes: Routes = [
   // Rota de login (pública)
@@ -24,6 +25,7 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     canActivate: [authGuard], // Protege a rota principal
     children: [
+
       { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Protege a home
       {
         path: 'gerencia-bilhete',
@@ -33,6 +35,13 @@ export const routes: Routes = [
           { path: 'liberar', component: LiberarComponent, canActivate: [authGuard], data: { breadcrumb: 'Liberar' } },
           { path: 'consultar', component: ConsultarComponent, canActivate: [authGuard], data: { breadcrumb: 'Consultar' } },
           { path: 'cng-pre-existente', component: CngPreExistenteComponent, canActivate: [authGuard], data: { breadcrumb: 'CNG Pré Existente' } }
+        ]
+      },
+      {
+        path: 'janela-broadcast',
+        data: {breadcrumb: 'Janela de Broadcast Bloqueada'},
+        children: [
+          { path: 'listar', component: ListarJanelaBroadcastComponent, data: { breadcrumb: 'Listar' } },
         ]
       }
     ]
