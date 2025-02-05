@@ -1,0 +1,12 @@
+@import "../../../../styles/variables.scss";
+
+.center{
+    text-align: center;
+}
+
+h1{
+    color: $primary-color;
+    font-size: 18px;
+    font-family: $montserrat-primary-font;
+    font-weight: 600;
+}

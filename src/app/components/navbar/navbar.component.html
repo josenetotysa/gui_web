@@ -1,0 +1,28 @@
+<nav class="menu-navbar">
+    <ul>
+        <li class="menu">
+            <a [routerLink]="['/auth/home']" class="menu-title">Home</a>
+        </li>
+        <li class="menu">
+            <a class="menu-title">
+                Gerência de Bilhete
+                <img src="assets/svg/keyboard_arrow_down_30dp_101828.svg" alt="icon-dropdown">
+            </a>
+            <ul class="dropdown">
+                <li><a routerLink="/auth/gerencia-bilhete/criar">Criar</a></li>
+                <li><a routerLink="/auth/gerencia-bilhete/liberar">Liberar</a></li>
+                <li><a routerLink="/auth/gerencia-bilhete/consultar">Consultar</a></li>
+                <li><a routerLink="/auth/gerencia-bilhete/cng-pre-existente">CNG Pré Existente</a></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <a class="menu-title">
+                Janela de Broadcast Bloqueada
+                <img src="assets/svg/keyboard_arrow_down_30dp_101828.svg" alt="icon-dropdown">
+            </a>
+            <ul class="dropdown">
+                <li><a [routerLink]="['/janela-broadcast/listar']" class="dropdown-link">Listar</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
