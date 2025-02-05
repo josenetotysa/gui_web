@@ -23,6 +23,9 @@ export class BreadcrumbComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.breadcrumbs = this.buildBreadcrumb(this.activatedRoute.root);
+    this.checkIfHomeRoute();
+
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
@@ -30,7 +33,7 @@ export class BreadcrumbComponent implements OnInit {
       )
       .subscribe(() => {
         this.breadcrumbs = this.buildBreadcrumb(this.activatedRoute.root);
-        this.checkIfHomeRoute(); // Verifica se a rota atual é /home
+        this.checkIfHomeRoute();
       });
   }
 
