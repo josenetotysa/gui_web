@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Importação necessária
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-criar',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './criar.component.html',
   styleUrl: './criar.component.scss'
 })
 export class CriarComponent {
   quantidadeHoras: string = '';
   quantidadeDuracaoExtra: string = '';
+  documentoSelecionado: string = 'CPF';
 
 
   formatarHoras(valor: string): string {
@@ -34,5 +36,13 @@ export class CriarComponent {
 
     // Mantém o formato correto para "00", "01", ..., "23"
     return numero.toString().padStart(2, '0') + 'h';
+  }
+
+  atualizarDocumento(tipo: string): void {
+    this.documentoSelecionado = tipo;
+  }
+
+  onSubmit(): void {
+    alert('Formulário enviado com sucesso!');
   }
 }

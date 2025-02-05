@@ -1,113 +1,131 @@
-<section class="conteiner">
-
+<section class="container">
     <h1 class="center">Criação de Bilhete de Portabilidade</h1>
-    <span>stepper</span>
+    <span>Stepper</span>
 
-    <section class="main">
+    <form class="formulario" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="coluna">
+            <h2>Bilhete de Portabilidade</h2>
 
-        <section class="main, container">
-                <form class="formulario" autocomplete="off">
-                    <!-- Coluna 1 -->
-                    <div class="coluna">
-                        <h2>Bilhete de portabilidade</h2>
-                        <div class="radio-group">
-                            <label><input type="radio" name="tipoTN" value="TN" checked> TN</label>
-                            <label><input type="radio" name="tipoTN" value="Lista de TN"> Lista de TN</label>
-                        </div>
-                        <div class="radio-group">
-                            <label><input type="radio" name="opcao" value="10" checked> 10</label>
-                            <label><input type="radio" name="opcao" value="11"> 11</label>
-                        </div>
-                        <div class="row">
-                            <label>*CN <input type="text" name="cn"></label>
-                            <label>*Número <input type="text" name="numero"></label>
-                            <label>*MCDU <input type="text" name="mcdu"></label>
-                        </div>
-                        <label>Id de grupo <input type="text" name="idGrupo"></label>
-                        <label>*Tipo
-                            <select name="tipo">
-                                <option value="LSPP">LSPP</option>
-                                <option value="LISP">LISP</option>
-                            </select>
-                        </label>
-                        <label>Número do Bilhete <input type="text" name="numeroBilhete"></label>
-                    </div>
+            <div class="radio-group">
+                <input type="radio" id="tn" name="tipoTN" value="TN" checked>
+                <label for="tn">TN</label>
+                <input type="radio" id="lista-tn" name="tipoTN" value="Lista de TN">
+                <label for="lista-tn">Lista de TN</label>
+            </div>
 
-                    <!-- Coluna 2 -->
-                    <div class="coluna">
-                        <h2>Prestadora</h2>
-                        <div class="row">
-                            <label>*Receptora <input type="text" name="receptora"></label>
-                            <label>*SPID <input type="text" name="spid"></label>
-                        </div>
-                        <div class="row">
-                            <label>*Doadora <input type="text" name="doadora"></label>
-                            <label>*SPID <input type="text" name="spid"></label>
-                        </div>
-                       
-                        <div class="row">
+            <div class="radio-group">
+                <input type="radio" id="opcao10" name="opcao" value="10" checked>
+                <label for="opcao10">10</label>
+                <input type="radio" id="opcao11" name="opcao" value="11">
+                <label for="opcao11">11</label>
+            </div>
 
-                            <label>Data de Vencimento
-                                <input type="date" name="dataVencimento">
-                            </label>
+            <div class="row">
+                <label class="flex-item">*CN <input type="text" name="cn" required></label>
+                <label class="flex-item">*Número <input type="text" name="numero" required></label>
+                <label class="flex-item">*MCDU <input type="text" name="mcdu" required></label>
+            </div>
 
-                            <label>
-                                Horas
-                                <input type="text"
-                                       name="quantidadeHoras"
-                                       [(ngModel)]="quantidadeHoras"
-                                       (input)="quantidadeHoras = formatarHoras(quantidadeHoras)"
-                                       maxlength="3"
-                                       placeholder="HH">
-                            </label>
-                        
-                            <label>
-                                Duração Extra
-                                <input type="text"
-                                       name="DuracaoExtra"
-                                       [(ngModel)]="quantidadeDuracaoExtra"
-                                       (input)="quantidadeDuracaoExtra = formatarHoras(quantidadeDuracaoExtra)"
-                                       maxlength="3"
-                                       placeholder="HH">
-                            </label>
-                        </div>
-                        
+            <div class="checkbox-group">
+                <input type="checkbox" id="gerar-id-grupo" name="gerarIdGrupo">
+                <label for="gerar-id-grupo">Gerar Id de Grupo</label>
+            </div>
 
+            <label>Id de grupo <input type="text" name="idGrupo"></label>
+            <label>*Tipo
+                <select name="tipo" required>
+                    <option value="LSPP">LSPP</option>
+                    <option value="LISP">LISP</option>
+                </select>
+            </label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="documentacao" name="documentacao">
+                <label for="documentacao">Documentação</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="reversao-desconexao" name="reversaoDesconexao">
+                <label for="reversao-desconexao">Reversão de desconexão</label>
+            </div>
+            <label>Número do Bilhete <input type="text" name="numeroBilhete"></label>
+        </div>
 
-                        <label>Motivo de Não Autorização
-                            <select name="motivo">
-                                <option value="">Selecione</option>
-                            </select>
-                        </label>
-                    </div>
+        <!-- Coluna 2 -->
+        <div class="coluna">
+            <h2>Prestadora</h2>
 
-                    <!-- Coluna 3 -->
-                    <div class="coluna">
-                        <h2>Rede</h2>
-                        <div class="row">
-                            <label>*RN1 <input type="text" name="rn1"></label>
-                            <label>*CNL Receptora <input type="text" name="cnlReceptora"></label>
-                            <label>*CNL Doadora <input type="text" name="cnlDoadora"></label>
-                        </div>
-                        <label>*SPID Receptora <input type="text" name="spidReceptora"></label>
-                        <label>*SPID Doadora <input type="text" name="spidDoadora"></label>
+            <div class="row">
+                <label class="flex-item">*Receptora <input type="text" name="receptora" required></label>
+                <label class="flex-item">*SPID Receptora <input type="text" name="spidReceptora" required></label>
+            </div>
 
+            <div class="row">
+                <label class="flex-item">*Doadora <input type="text" name="doadora" required></label>
+                <label class="flex-item">*SPID Doadora <input type="text" name="spidDoadora" required></label>
+            </div>
 
-                        <h2>Dados do Cliente</h2>
-                        <div class="radio-group">
-                            <label><input type="radio" name="documento" value="CPF" checked> CPF</label>
-                            <label><input type="radio" name="documento" value="CNPJ"> CNPJ</label>
-                        </div>
-                        <label>CPF <input type="text" name="cpf"></label>
-                        <label>Nome <input type="text" name="nome"></label>
-                        <label>ID <input type="text" name="id"></label>
-                        <div class="actions">
-                            <button type="reset" class="btn limpar">LIMPAR</button>
-                            <button type="submit" class="btn submeter">SUBMETER</button>
-                        </div>
-                    </div>
+            <div class="row">
 
-                </form>
-        </section>
-    </section>
+                <label>Data de Vencimento
+                    <input type="date" name="dataVencimento">
+                </label>
+
+                <label class="flex-item">
+                    Horas
+                    <input type="text" name="quantidadeHoras" [(ngModel)]="quantidadeHoras"
+                        (input)="quantidadeHoras = formatarHoras(quantidadeHoras)" maxlength="3" placeholder="HH">
+                </label>
+
+                <label class="flex-item">
+                    Duração Extra
+                    <input type="text" name="DuracaoExtra" [(ngModel)]="quantidadeDuracaoExtra"
+                        (input)="quantidadeDuracaoExtra = formatarHoras(quantidadeDuracaoExtra)" maxlength="3"
+                        placeholder="HH">
+                </label>
+            </div>
+
+            <label>Motivo de Não Autorização
+                <select name="motivo">
+                    <option value="">Selecione</option>
+                    <option value="Motivo1">Motivo 1</option>
+                    <option value="Motivo2">Motivo 2</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Coluna 3 -->
+        <div class="coluna">
+            <h2>Rede</h2>
+
+            <div class="row">
+                <label class="flex-item">*RN1 <input type="text" name="rn1" required></label>
+                <label>*CNL Receptora <input type="text" name="cnlReceptora" required></label>
+                <label>*CNL Doadora <input type="text" name="cnlDoadora"></label>
+            </div>
+
+            <div class="row">
+                <label class="flex-item">*Receptora <input type="text" name="receptora" required></label>
+                <label class="flex-item">*SPID Receptora <input type="text" name="spidReceptora" required></label>
+            </div>
+
+            <h2>Dados do Cliente</h2>
+            <div class="radio-group">
+                <input type="radio" id="cpf" name="documento" value="CPF" (change)="atualizarDocumento('CPF')" checked>
+                <label for="cpf">CPF</label>
+                <input type="radio" id="cnpj" name="documento" value="CNPJ" (change)="atualizarDocumento('CNPJ')">
+                <label for="cnpj">CNPJ</label>
+
+            </div>
+
+            <label *ngIf="documentoSelecionado === 'CPF'">CPF <input type="text" name="cpf" required></label>
+            <label *ngIf="documentoSelecionado === 'CNPJ'">CNPJ <input type="text" name="cnpj" required></label>
+
+            <label>Nome <input type="text" name="nome"></label>
+            <label>ID <input type="text" name="id"></label>
+
+            <div class="actions">
+                <button type="reset" class="btn limpar">LIMPAR</button>
+                <button type="submit" class="btn submeter">SUBMETER</button>
+            </div>
+        </div>
+    </form>
 </section>

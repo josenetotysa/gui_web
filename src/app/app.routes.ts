@@ -8,6 +8,7 @@ import { CriarComponent } from './pages/gerencia-bilhete/criar/criar.component';
 import { LiberarComponent } from './pages/gerencia-bilhete/liberar/liberar.component';
 import { ConsultarComponent } from './pages/gerencia-bilhete/consultar/consultar.component';
 import { CngPreExistenteComponent } from './pages/gerencia-bilhete/cng-pre-existente/cng-pre-existente.component';
+import { AUTO_STYLE } from '@angular/animations';
 
 export const routes: Routes = [
   // Rota de login (pública)
@@ -18,20 +19,21 @@ export const routes: Routes = [
       { path: '', component: LoginComponent } // Exibe o LoginComponent
     ]
   },
-  // Rotas protegidas pelo authGuard (filhas de /auth)
+  // Rotas protegidas pelo authGuard
   {
     path: 'auth',
     component: MainLayoutComponent,
+    canActivate: [authGuard], // Protege a rota principal
     children: [
-      { path: 'home', component: HomeComponent},
+      { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Protege a home
       {
         path: 'gerencia-bilhete',
         data: { breadcrumb: 'Gerência de Bilhete' },
         children: [
-          { path: 'criar', component: CriarComponent, data: { breadcrumb: 'Criar' } },
-          { path: 'liberar', component: LiberarComponent, data: { breadcrumb: 'Liberar' } },
-          { path: 'consultar', component: ConsultarComponent, data: { breadcrumb: 'Consultar' } },
-          { path: 'cng-pre-existente', component: CngPreExistenteComponent, data: { breadcrumb: 'CNG Pré Existente' } }
+          { path: 'criar', component: CriarComponent, canActivate: [authGuard], data: { breadcrumb: 'Criar' } },
+          { path: 'liberar', component: LiberarComponent, canActivate: [authGuard], data: { breadcrumb: 'Liberar' } },
+          { path: 'consultar', component: ConsultarComponent, canActivate: [authGuard], data: { breadcrumb: 'Consultar' } },
+          { path: 'cng-pre-existente', component: CngPreExistenteComponent, canActivate: [authGuard], data: { breadcrumb: 'CNG Pré Existente' } }
         ]
       }
     ]

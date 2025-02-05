@@ -1,11 +1,62 @@
+@import "./styles/variables.scss";
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    
-  }
-  
-  html, body {
-    min-height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+/* Oculta os inputs padrão */
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilos base para os elementos customizados */
+.radio-group input+label:before,
+.checkbox-group input+label:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  cursor: pointer;
+  border: 1px solid $grayDark-color;
+  transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* Específico para radio */
+.radio-group input+label:before {
+  border-radius: 50%;
+  background-color: #D9D9D9;
+  margin-bottom: 2px;
+}
+
+.radio-group input:checked + label:before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='6' fill='%231B5996'/%3E%3C/svg%3E%0A");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid $primary-color;
+  box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.09);
+}
+
+/* Específico para checkbox */
+.checkbox-group input+label:before {
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.checkbox-group input:checked+label:before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.7751 4.575L7.0126 0.3375C7.1126 0.2375 7.22927 0.1875 7.3626 0.1875C7.49594 0.1875 7.6126 0.2375 7.7126 0.3375C7.8126 0.4375 7.8626 0.55625 7.8626 0.69375C7.8626 0.83125 7.8126 0.95 7.7126 1.05L3.1251 5.65C3.0251 5.75 2.90844 5.8 2.7751 5.8C2.64177 5.8 2.5251 5.75 2.4251 5.65L0.275104 3.5C0.175104 3.4 0.127187 3.28125 0.131354 3.14375C0.13552 3.00625 0.187604 2.8875 0.287604 2.7875C0.387604 2.6875 0.506354 2.6375 0.643854 2.6375C0.781354 2.6375 0.900104 2.6875 1.0001 2.7875L2.7751 4.575Z' fill='%23E8EAED'/%3E%3C/svg%3E%0A");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1B5996;
+  border: 1px solid #124465;
+  box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.09);
 }
