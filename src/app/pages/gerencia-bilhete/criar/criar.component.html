@@ -1,9 +1,96 @@
 <section class="conteiner">
+
     <h1 class="center">Criação de Bilhete de Portabilidade</h1>
     <span>stepper</span>
 
     <section class="main">
-        <h2>Bilhete de portabilidade</h2>
 
+        <section class="main">
+            <div class="container">
+                <form class="formulario">
+                    <!-- Coluna 1 -->
+                    <div class="coluna">
+                        <h2>Bilhete de portabilidade</h2>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipoTN" value="TN" checked> TN</label>
+                            <label><input type="radio" name="tipoTN" value="Lista de TN"> Lista de TN</label>
+                        </div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="opcao" value="10" checked> 10</label>
+                            <label><input type="radio" name="opcao" value="11"> 11</label>
+                        </div>
+                        <div class="row">
+                            <label>*CN <input type="text" name="cn"></label>
+                            <label>*Número <input type="text" name="numero"></label>
+                            <label>*MCDU <input type="text" name="mcdu"></label>
+                        </div>
+                        <label>Id de grupo <input type="text" name="idGrupo"></label>
+                        <label>*Tipo
+                            <select name="tipo">
+                                <option value="LSPP">LSPP</option>
+                                <option value="LISP">LISP</option>
+                            </select>
+                        </label>
+                        <label>Número do Bilhete <input type="text" name="numeroBilhete"></label>
+                    </div>
+
+                    <!-- Coluna 2 -->
+                    <div class="coluna">
+                        <h2>Prestadora</h2>
+                        <div class="row">
+                            <label>*Receptora <input type="text" name="receptora"></label>
+                            <label>*SPID <input type="text" name="spid"></label>
+                        </div>
+                        <div class="row">
+                            <label>*Doadora <input type="text" name="doadora"></label>
+                            <label>*SPID <input type="text" name="spid"></label>
+                        </div>
+                        <div class="row">
+                            <label>Data de Vencimento
+                                <input type="date" name="dataVencimento" [max]="dataMaxima">
+                            </label>
+
+                            <label>Horas
+                                <input type="text" name="quantidadeHoras" [(ngModel)]="quantidadeHoras"
+                                    (input)="formatarHoras()" placeholder="HH" maxlength="3">
+                            </label>
+
+                        </div>
+                        <label>Motivo de Não Autorização
+                            <select name="motivo">
+                                <option value="">Selecione</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <!-- Coluna 3 -->
+                    <div class="coluna">
+                        <h2>Rede</h2>
+                        <div class="row">
+                            <label>*RN1 <input type="text" name="rn1"></label>
+                            <label>*CNL Receptora <input type="text" name="cnlReceptora"></label>
+                            <label>*CNL Doadora <input type="text" name="cnlDoadora"></label>
+                        </div>
+                        <label>*SPID Receptora <input type="text" name="spidReceptora"></label>
+                        <label>*SPID Doadora <input type="text" name="spidDoadora"></label>
+
+
+                        <h2>Dados do Cliente</h2>
+                        <div class="radio-group">
+                            <label><input type="radio" name="documento" value="CPF" checked> CPF</label>
+                            <label><input type="radio" name="documento" value="CNPJ"> CNPJ</label>
+                        </div>
+                        <label>CPF <input type="text" name="cpf"></label>
+                        <label>Nome <input type="text" name="nome"></label>
+                        <label>ID <input type="text" name="id"></label>
+                        <div class="actions">
+                            <button type="reset" class="btn limpar">LIMPAR</button>
+                            <button type="submit" class="btn submeter">SUBMETER</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
     </section>
-</section>
+</section> 
