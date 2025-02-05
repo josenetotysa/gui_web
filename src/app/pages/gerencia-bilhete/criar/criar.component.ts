@@ -8,37 +8,31 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './criar.component.html',
   styleUrl: './criar.component.scss'
 })
-export class CriarComponent implements OnInit {
-  dataMaxima: string = '';
-  quantidadeHoras: string = ''; // Armazena o valor formatado ("02h", "48h")
+export class CriarComponent {
+  quantidadeHoras: string = '';
+  quantidadeDuracaoExtra: string = '';
 
-  ngOnInit() {
-    // Define a data máxima para hoje
-    const hoje = new Date().toISOString().split("T")[0];
-    this.dataMaxima = hoje;
-  }
 
-  formatarHoras() {
-    if (!this.quantidadeHoras) {
-      return;
+  formatarHoras(valor: string): string {
+    let apenasNumeros = valor.replace(/\D/g, ''); // Remove tudo que não for número
+
+    if (apenasNumeros.length === 0) {
+      return ''; // Se não há números, retorna vazio
     }
-  
-    // Remove qualquer caractere não numérico
-    let horas = this.quantidadeHoras.replace(/\D/g, '');
-  
-    // Se o usuário estiver apagando (removendo o último número), não forçar a reinserção do "h"
-    if (this.quantidadeHoras.endsWith('h') && this.quantidadeHoras.length > horas.length + 1) {
-      this.quantidadeHoras = horas;
-      return;
+
+    // Se o usuário digitou apenas um número
+    if (apenasNumeros.length === 1) {
+      return apenasNumeros + 'h';
     }
-  
-    // Limita a dois caracteres numéricos
-    horas = horas.substring(0, 2);
-  
-    // Se houver algum número, adiciona "h" no final, senão deixa vazio
-    this.quantidadeHoras = horas ? horas + 'h' : '';
+
+    // Se o usuário digitou dois números, verificamos se está dentro do intervalo 00-23
+    let numero = parseInt(apenasNumeros, 10);
+
+    if (numero > 23) {
+      numero = 23; // Se for maior que 23, define como 23
+    }
+
+    // Mantém o formato correto para "00", "01", ..., "23"
+    return numero.toString().padStart(2, '0') + 'h';
   }
-  
-  
-  
 }

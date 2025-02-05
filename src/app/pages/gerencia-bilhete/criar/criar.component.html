@@ -5,9 +5,8 @@
 
     <section class="main">
 
-        <section class="main">
-            <div class="container">
-                <form class="formulario">
+        <section class="main, container">
+                <form class="formulario" autocomplete="off">
                     <!-- Coluna 1 -->
                     <div class="coluna">
                         <h2>Bilhete de portabilidade</h2>
@@ -45,17 +44,36 @@
                             <label>*Doadora <input type="text" name="doadora"></label>
                             <label>*SPID <input type="text" name="spid"></label>
                         </div>
+                       
                         <div class="row">
+
                             <label>Data de Vencimento
-                                <input type="date" name="dataVencimento" [max]="dataMaxima">
+                                <input type="date" name="dataVencimento">
                             </label>
 
-                            <label>Horas
-                                <input type="text" name="quantidadeHoras" [(ngModel)]="quantidadeHoras"
-                                    (input)="formatarHoras()" placeholder="HH" maxlength="3">
+                            <label>
+                                Horas
+                                <input type="text"
+                                       name="quantidadeHoras"
+                                       [(ngModel)]="quantidadeHoras"
+                                       (input)="quantidadeHoras = formatarHoras(quantidadeHoras)"
+                                       maxlength="3"
+                                       placeholder="HH">
                             </label>
-
+                        
+                            <label>
+                                Duração Extra
+                                <input type="text"
+                                       name="DuracaoExtra"
+                                       [(ngModel)]="quantidadeDuracaoExtra"
+                                       (input)="quantidadeDuracaoExtra = formatarHoras(quantidadeDuracaoExtra)"
+                                       maxlength="3"
+                                       placeholder="HH">
+                            </label>
                         </div>
+                        
+
+
                         <label>Motivo de Não Autorização
                             <select name="motivo">
                                 <option value="">Selecione</option>
@@ -90,7 +108,6 @@
                     </div>
 
                 </form>
-            </div>
         </section>
     </section>
-</section> 
+</section>
