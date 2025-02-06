@@ -112,7 +112,7 @@ label.required::before {
 }
 
 /* Estilização para o input com ícone */
-.input-container {
+.input-container-required {
   position: relative;
   display: flex;
   align-items: center;
@@ -125,14 +125,14 @@ label.required::before {
 }
 
 /* Quando um input dentro do container estiver ativo */
-.input-container:focus-within {
+.input-container-required:focus-within {
   border-color: $primary-color !important;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   background-color: #fff !important;
 }
 
 /* Melhorando o input dentro do container */
-.input-container input {
+.input-container-required input {
   margin: 0px;
   border: none;
   padding: 8px;
@@ -141,7 +141,7 @@ label.required::before {
 }
 
 /* Removendo estilos conflitantes */
-.input-container input:focus {
+.input-container-required input:focus {
   border: none;
   box-shadow: none;
   background: transparent;
@@ -153,4 +153,9 @@ label.required::before {
   width: 18px;
   height: 18px;
   cursor: pointer;
+}
+
+#input-container-norequired{
+  background-color: #fff;
+  border-color: $border-color;
 }

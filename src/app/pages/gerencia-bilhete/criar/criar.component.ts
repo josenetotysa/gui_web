@@ -13,6 +13,10 @@ export class CriarComponent {
   quantidadeHoras: string = '';
   quantidadeDuracaoExtra: string = '';
   documentoSelecionado: string = 'CPF';
+  cpf: string = '';
+  cnpj: string = '';
+  nome: string = '';
+  id: string = '';
 
 
   formatarHoras(valor: string): string {
