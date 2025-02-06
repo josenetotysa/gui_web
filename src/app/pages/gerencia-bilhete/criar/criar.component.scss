@@ -13,6 +13,8 @@ h1 {
 
 .container {
   padding: 20px;
+  max-width: 1600px;
+  margin: auto;
 }
 
 .formulario {
@@ -159,3 +161,96 @@ label.required::before {
   background-color: #fff;
   border-color: $border-color;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dados-cliente {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+// .radio-group {
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+// }
+
+.input-group {
+  margin: 10px 0;
+}
+
+// label {
+//   display: block;
+//   font-weight: bold;
+//   margin-bottom: 5px;
+// }
+
+// input {
+//   width: 100%;
+//   padding: 8px;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   margin-top: 5px;
+// }
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+// .actions {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 15px;
+// }
+
+// .btn {
+//   padding: 10px 20px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// .btn.limpar {
+//   background-color: #f1f1f1;
+//   color: #333;
+// }
+
+// .btn.submeter {
+//   background-color: #007bff;
+//   color: #fff;
+// }

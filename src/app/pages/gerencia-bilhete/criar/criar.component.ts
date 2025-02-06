@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importação necessária
 import { FormsModule } from '@angular/forms';
-
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-criar',
   standalone: true,
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class CriarComponent {
   quantidadeHoras: string = '';
   quantidadeDuracaoExtra: string = '';
-  documentoSelecionado: string = 'CPF';
+  documentoSelecionado: string = 'CPF'; // Ou CNPJ, dependendo do default
   cpf: string = '';
   cnpj: string = '';
   nome: string = '';
@@ -42,11 +42,44 @@ export class CriarComponent {
     return numero.toString().padStart(2, '0') + 'h';
   }
 
-  atualizarDocumento(tipo: string): void {
-    this.documentoSelecionado = tipo;
-  }
+
+
+  constructor(private cd: ChangeDetectorRef) {}
+  
+  // atualizarDocumento(tipo: string) {
+  //   this.documentoSelecionado = tipo;
+  //   this.cd.detectChanges(); // Força a atualização da view
+  // }
+  
 
   onSubmit(): void {
     alert('Formulário enviado com sucesso!');
   }
+
+  abaSelecionada: string = 'cliente';
+
+selecionarAba(aba: string): void {
+  this.abaSelecionada = aba;
+}
+
+
+  limparCampos(): void {
+    this.cpf = '';
+    this.cnpj = '';
+    this.nome = '';
+    this.id = '';
+    this.documentoSelecionado = 'CPF';
+  }
+
+  indicaFraudeRec: string = 'Regular';
+justificativaFraudeRec: string = '';
+idBpFraudeRec: string = '';
+ajustarDataRec: boolean = false;
+
+indicaFraudeDoad: string = 'Regular';
+justificativaFraudeDoad: string = '';
+idBpFraudeDoad: string = '';
+ajustarDataDoad: boolean = false;
+
+  
 }
