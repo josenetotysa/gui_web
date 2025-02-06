@@ -12,6 +12,10 @@ html, body {
   min-height: 100%;
 }
 
+h2, label{
+  font-family: $roboto-secondary-font;
+}
+
 /* Oculta os inputs padrão */
 .radio-group input[type="radio"],
 .checkbox-group input[type="checkbox"] {

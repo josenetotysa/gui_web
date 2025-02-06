@@ -1,0 +1,166 @@
+/* Estilização geral */
+body {
+  background-color: #f3f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Caixa de login */
+.login-box {
+  background-color: white;
+  padding: 30px;
+  width: 478px;
+  height: 478px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid #1e4d80;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 170px;
+  height: 70px;
+}
+
+.logo h2 {
+  font-size: 24px;
+  color: #1e4d80;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formsStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #7a7a7a;
+  margin-bottom: 15px;
+  height: 52.57px;
+  width: 338.76px;
+}
+/* Quando o mouse passa por cima */
+.input-group:hover {
+    border-color: #1B5996; /* Altera a borda para a cor desejada */
+    background-color: #e3eef8; /* Adiciona um leve destaque no fundo */
+  }
+  
+  /* Ajuste no ícone dentro do input ao passar o mouse */
+  
+
+.input-group i {
+  color: #555;
+  font-size: 23px; /* Ajusta o tamanho do ícone */
+  margin-right: 12px;
+}
+.input-group:hover i {
+    color: #1B5996;
+  }
+
+.input-group input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+}
+
+/* Lembrar-me */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-left: 65px;
+    width: 100%;
+    gap: 8px; /* Espaçamento entre o checkbox e o texto */
+  }
+
+.remember-me input {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Espaçamento entre o checkbox e o texto */
+    cursor: pointer;
+  }
+
+
+/* Botão de login */
+.login-button {
+  height: 52.57px;
+  width: 338.76px;
+  padding: 10px;
+  background-color: #1e4d80;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 66px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #15395a;
+}
+
+
+
+  /* Estilizando a checkbox */
+  .remember-me input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #7a7a7a;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none; /* Remove o estilo padrão do navegador */
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Efeito hover: aumenta a borda */
+  .remember-me input[type="checkbox"]:hover {
+    border-color: #1B5996;
+  }
+  
+  /* Quando a checkbox é marcada */
+  .remember-me input[type="checkbox"]:checked {
+    background-color: #1B5996;
+    border-color: #1B5996;
+    position: relative;
+  }
+  
+  /* Adicionando um check personalizado */
+  .remember-me input[type="checkbox"]:checked::after {
+    content: "✔"; 
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    left: 2px;
+    top: -3px;
+    font-weight: bold;
+  }

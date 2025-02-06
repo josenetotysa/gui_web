@@ -8,7 +8,7 @@ h1 {
   color: $primary-color;
   font-size: 18px;
   font-family: $montserrat-primary-font;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .container {
@@ -34,8 +34,8 @@ h2 {
 
 label {
   display: block;
-  margin-bottom: 10px;
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
 input,
@@ -45,16 +45,15 @@ select {
   border: 1px solid $border-color;
   border-radius: 8px;
   margin-top: 5px;
+  outline: none;
 }
 
 input:focus,
 select:focus {
-  outline: none;
   border-color: $primary-color !important;
-  box-shadow: 0px 0px 2px 4px rgba(0, 0, 0, 0.08);
-  background-color: #FFF !important;
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: #fff !important;
 }
-
 
 input:required,
 select:required {
@@ -62,19 +61,25 @@ select:required {
   background-color: $required-color-fill;
 }
 
-
-.row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+/* Estilizando o Select */
+select {
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.1283 3.81773L9.80094 0.496403C9.97359 0.340272 10.1933 0.262207 10.4601 0.262207C10.727 0.262207 10.9467 0.340272 11.1193 0.496403C11.292 0.652534 11.3783 0.851246 11.3783 1.09254C11.3783 1.33383 11.292 1.53254 11.1193 1.68867L6.78749 5.60614C6.69332 5.6913 6.5913 5.75162 6.48143 5.78711C6.37157 5.82259 6.25386 5.84033 6.1283 5.84033C6.00274 5.84033 5.88502 5.82259 5.77516 5.78711C5.66529 5.75162 5.56327 5.6913 5.4691 5.60614L1.13726 1.68867C0.964619 1.53254 0.878296 1.33383 0.878296 1.09254C0.878296 0.851246 0.964619 0.652534 1.13726 0.496403C1.30991 0.340272 1.52964 0.262207 1.79646 0.262207C2.06327 0.262207 2.283 0.340272 2.45565 0.496403L6.1283 3.81773Z' fill='%23344054'/%3E%3C/svg%3E%0A") no-repeat right 10px center;
+  background-size: 14px;
+  padding-right: 30px;
+  margin-bottom: 16px;
 }
 
-.radio-group {
+/* Grupos de Entrada */
+.row,
+.radio-group,
+.checkbox-group {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
 }
 
+/* Botões */
 .actions {
   display: flex;
   justify-content: space-between;
@@ -93,13 +98,11 @@ select:required {
   color: #333;
 }
 
+.flex-item{
+  flex: 1;
+}
+
 .btn.submeter {
   background-color: #007bff;
   color: #fff;
 }
-
-.flex-item {
-  flex-grow: 1;
-  /* o valor default(padrão) é 0 */
-}
-
