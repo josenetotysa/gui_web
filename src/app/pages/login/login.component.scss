@@ -2,6 +2,7 @@
 body {
   background-color: #f3f7fb;
   font-family: Arial, sans-serif;
+  font-size: 1rem;
 }
 
 /* Container principal */
@@ -15,12 +16,12 @@ body {
 /* Caixa de login */
 .login-box {
   background-color: white;
-  padding: 30px;
-  width: 478px;
-  height: 478px;
+  padding: 2rem;
+  width: 30rem;
+  height: 30rem;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-top: 5px solid #1e4d80;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  border-top: 0.3125rem solid #1e4d80;
 }
 
 /* Logo */
@@ -28,26 +29,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .logo img {
-  width: 170px;
-  height: 70px;
+  width: 10.75rem;
+  height: 4.5rem;
 }
 
 .logo h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #1e4d80;
 }
 
 h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
   color: #333;
 }
 
+/* Formulário */
 .formsStyle {
   display: flex;
   flex-direction: column;
@@ -59,30 +61,28 @@ h3 {
 .input-group {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-  border: 2px solid #7a7a7a;
-  margin-bottom: 15px;
-  height: 52.57px;
-  width: 338.76px;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 0.125rem solid #7a7a7a;
+  margin-bottom: 1rem;
+  height: 3.5rem;
+  width: 21.25rem;
 }
-/* Quando o mouse passa por cima */
+
 .input-group:hover {
-    border-color: #1B5996; /* Altera a borda para a cor desejada */
-    background-color: #e3eef8; /* Adiciona um leve destaque no fundo */
-  }
-  
-  /* Ajuste no ícone dentro do input ao passar o mouse */
-  
+  border-color: #1B5996;
+  background-color: #e3eef8;
+}
 
 .input-group i {
   color: #555;
-  font-size: 23px; /* Ajusta o tamanho do ícone */
-  margin-right: 12px;
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
 }
+
 .input-group:hover i {
-    color: #1B5996;
-  }
+  color: #1B5996;
+}
 
 .input-group input {
   border: none;
@@ -93,34 +93,34 @@ h3 {
 
 /* Lembrar-me */
 .remember-me {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 14px;
-    margin-bottom: 20px;
-    padding-left: 65px;
-    width: 100%;
-    gap: 8px; /* Espaçamento entre o checkbox e o texto */
-  }
+  vertical-align: baseline;
+  // display: flex;
+  // align-items: center;
+  // // justify-content: flex-start;
+  // // font-size: 0.875rem;
+  // // margin-bottom: 1.25rem;
+  // padding-left: 4rem;
+  // width: 100%;
+  // gap: 0.5rem;
+}
 
-.remember-me input {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px; /* Espaçamento entre o checkbox e o texto */
-    cursor: pointer;
-  }
-
+// .remember-me input {
+//   width: 1.5rem;
+//   height: 1.5rem;
+//   margin-right: 0.5rem;
+//   cursor: pointer;
+// }
 
 /* Botão de login */
 .login-button {
-  height: 52.57px;
-  width: 338.76px;
-  padding: 10px;
+  height: 3.5rem;
+  width: 21.25rem;
+  padding: 0.75rem;
   background-color: #1e4d80;
   border: none;
   color: white;
-  font-size: 16px;
-  border-radius: 66px;
+  font-size: 1rem;
+  border-radius: 4rem;
   cursor: pointer;
 }
 
@@ -128,39 +128,46 @@ h3 {
   background-color: #15395a;
 }
 
+// /* Checkbox */
+// .remember-me input[type="checkbox"] {
+//   width: 1.5rem;
+//   height: 1.5rem;
+//   border: 0.125rem solid #7a7a7a;
+//   border-radius: 0.25rem;
+//   cursor: pointer;
+//   appearance: none;
+//   background-color: white;
+//   transition: all 0.3s ease-in-out;
+// }
 
+// .remember-me input[type="checkbox"]:hover {
+//   border-color: #1B5996;
+// }
 
-  /* Estilizando a checkbox */
-  .remember-me input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #7a7a7a;
-    border-radius: 4px;
-    cursor: pointer;
-    appearance: none; /* Remove o estilo padrão do navegador */
-    background-color: white;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Efeito hover: aumenta a borda */
-  .remember-me input[type="checkbox"]:hover {
-    border-color: #1B5996;
-  }
-  
-  /* Quando a checkbox é marcada */
-  .remember-me input[type="checkbox"]:checked {
-    background-color: #1B5996;
-    border-color: #1B5996;
-    position: relative;
-  }
-  
-  /* Adicionando um check personalizado */
-  .remember-me input[type="checkbox"]:checked::after {
-    content: "✔"; 
-    font-size: 16px;
-    color: white;
-    position: absolute;
-    left: 2px;
-    top: -3px;
-    font-weight: bold;
-  }
+// .remember-me input[type="checkbox"]:checked {
+//   background-color: #1B5996;
+//   border-color: #1B5996;
+//   position: relative;
+// }
+
+// .remember-me input[type="checkbox"]:checked::after {
+//   content: "✔";
+//   font-size: 1rem;
+//   color: white;
+//   position: absolute;
+//   left: 0.125rem;
+//   top: -0.25rem;
+//   font-weight: bold;
+// }
+
+/* Ícones */
+svg {
+  margin-left: 0.5rem;
+  margin-right: 0.75rem;
+}
+
+#testando{
+  margin-bottom: 16px;
+
+  padding-right: 185px;
+}
