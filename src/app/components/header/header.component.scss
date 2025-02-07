@@ -76,15 +76,6 @@ header {
     color: $red-logo;
 }
 
-
-
-
-
-
-
-
-
-
 .notifications {
     position: relative;
 }
@@ -92,6 +83,12 @@ header {
 .notifications button {
     position: relative;
 }
+
+.hoverbtn:hover{
+    background-color: $second-color;
+    transition: 0.3s ease;
+}
+
 
 mat-menu {
     background: white;
@@ -107,30 +104,6 @@ mat-menu-item {
 mat-icon {
     color: #0056b3;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app-navbar {
     padding-left: 9.375rem; // 150px → 9.375rem

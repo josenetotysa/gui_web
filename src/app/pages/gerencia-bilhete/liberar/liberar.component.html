@@ -1,8 +1,170 @@
-<section class="conteiner">
+<section class="container">
     <h1 class="center">Liberar Bilhete de Portabilidade</h1>
-    <span>stepper</span>
+    <div class="stepper">
+        <span class="step active">Bilhete</span>
+        <span class="step">Prestadora</span>
+        <span class="step">Rede</span>
+        <span class="step">Dados do Cliente</span>
+    </div>
 
-    <section class="main">
+    <form class="formulario" autocomplete="off">
+        <div class="coluna">
+            <h2>Bilhete de Portabilidade</h2>
 
-    </section>
+            <div class="radio-group">
+                <input type="radio" id="tn" name="tipoTN" value="TN" checked>
+                <label for="tn">TN</label>
+                <input type="radio" id="lista-tn" name="tipoTN" value="Lista de TN">
+                <label for="lista-tn">Lista de TN</label>
+            </div>
+
+            <div class="radio-group">
+                <input type="radio" id="opcao10" name="opcao" value="10" checked>
+                <label for="opcao10">10</label>
+                <input type="radio" id="opcao11" name="opcao" value="11">
+                <label for="opcao11">11</label>
+            </div>
+
+            <div class="row">
+                <label class="flex-item">CN <input type="text" name="cn"></label>
+                <label class="flex-item">Número <input type="text" name="numero"></label>
+                <label class="flex-item">MCDU <input type="text" name="mcdu"></label>
+            </div>
+
+            <h2>Prestadora</h2>
+
+            <div class="row">
+                <label class="flex-item required">Receptora
+                    <div class="input-container">
+                        <input type="text" name="receptora" required>
+                        <svg class="input-icon" onclick="alert('Ícone clicado!')" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.9175 11.835C4.26363 11.835 2.86392 11.2622 1.71835 10.1166C0.572783 8.97108 0 7.57136 0 5.9175C0 4.26363 0.572783 2.86392 1.71835 1.71835C2.86392 0.572783 4.26363 0 5.9175 0C7.57136 0 8.97108 0.572783 10.1166 1.71835C11.2622 2.86392 11.835 4.26363 11.835 5.9175C11.835 6.58511 11.7288 7.21479 11.5164 7.80654C11.3039 8.39829 11.0156 8.92176 10.6515 9.37696L15.7496 14.4751C15.9165 14.642 16 14.8544 16 15.1124C16 15.3703 15.9165 15.5827 15.7496 15.7496C15.5827 15.9165 15.3703 16 15.1124 16C14.8544 16 14.642 15.9165 14.4751 15.7496L9.37696 10.6515C8.92176 11.0156 8.39829 11.3039 7.80654 11.5164C7.21479 11.7288 6.58511 11.835 5.9175 11.835ZM5.9175 10.0142C7.05548 10.0142 8.02276 9.61593 8.81935 8.81935C9.61593 8.02276 10.0142 7.05548 10.0142 5.9175C10.0142 4.77952 9.61593 3.81223 8.81935 3.01565C8.02276 2.21906 7.05548 1.82077 5.9175 1.82077C4.77952 1.82077 3.81223 2.21906 3.01565 3.01565C2.21906 3.81223 1.82077 4.77952 1.82077 5.9175C1.82077 7.05548 2.21906 8.02276 3.01565 8.81935C3.81223 9.61593 4.77952 10.0142 5.9175 10.0142Z"
+                            fill="#BB8703" />
+                    </svg>
+                    </div>
+                </label>
+
+                <label class="flex-item required">SPID
+                    <div class="input-container">
+                        <input type="text" name="spidReceptora" required>
+                        <svg class="input-icon" onclick="alert('Ícone clicado!')" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.9175 11.835C4.26363 11.835 2.86392 11.2622 1.71835 10.1166C0.572783 8.97108 0 7.57136 0 5.9175C0 4.26363 0.572783 2.86392 1.71835 1.71835C2.86392 0.572783 4.26363 0 5.9175 0C7.57136 0 8.97108 0.572783 10.1166 1.71835C11.2622 2.86392 11.835 4.26363 11.835 5.9175C11.835 6.58511 11.7288 7.21479 11.5164 7.80654C11.3039 8.39829 11.0156 8.92176 10.6515 9.37696L15.7496 14.4751C15.9165 14.642 16 14.8544 16 15.1124C16 15.3703 15.9165 15.5827 15.7496 15.7496C15.5827 15.9165 15.3703 16 15.1124 16C14.8544 16 14.642 15.9165 14.4751 15.7496L9.37696 10.6515C8.92176 11.0156 8.39829 11.3039 7.80654 11.5164C7.21479 11.7288 6.58511 11.835 5.9175 11.835ZM5.9175 10.0142C7.05548 10.0142 8.02276 9.61593 8.81935 8.81935C9.61593 8.02276 10.0142 7.05548 10.0142 5.9175C10.0142 4.77952 9.61593 3.81223 8.81935 3.01565C8.02276 2.21906 7.05548 1.82077 5.9175 1.82077C4.77952 1.82077 3.81223 2.21906 3.01565 3.01565C2.21906 3.81223 1.82077 4.77952 1.82077 5.9175C1.82077 7.05548 2.21906 8.02276 3.01565 8.81935C3.81223 9.61593 4.77952 10.0142 5.9175 10.0142Z"
+                            fill="#BB8703" />
+                    </svg>
+                    </div>
+                </label>
+            </div>
+
+            <div class="row">
+                <label class="flex-item required">Doadora
+                    <div class="input-container">
+                        <input type="text" name="doadora" required>
+                        <svg class="input-icon" onclick="alert('Ícone clicado!')" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.9175 11.835C4.26363 11.835 2.86392 11.2622 1.71835 10.1166C0.572783 8.97108 0 7.57136 0 5.9175C0 4.26363 0.572783 2.86392 1.71835 1.71835C2.86392 0.572783 4.26363 0 5.9175 0C7.57136 0 8.97108 0.572783 10.1166 1.71835C11.2622 2.86392 11.835 4.26363 11.835 5.9175C11.835 6.58511 11.7288 7.21479 11.5164 7.80654C11.3039 8.39829 11.0156 8.92176 10.6515 9.37696L15.7496 14.4751C15.9165 14.642 16 14.8544 16 15.1124C16 15.3703 15.9165 15.5827 15.7496 15.7496C15.5827 15.9165 15.3703 16 15.1124 16C14.8544 16 14.642 15.9165 14.4751 15.7496L9.37696 10.6515C8.92176 11.0156 8.39829 11.3039 7.80654 11.5164C7.21479 11.7288 6.58511 11.835 5.9175 11.835ZM5.9175 10.0142C7.05548 10.0142 8.02276 9.61593 8.81935 8.81935C9.61593 8.02276 10.0142 7.05548 10.0142 5.9175C10.0142 4.77952 9.61593 3.81223 8.81935 3.01565C8.02276 2.21906 7.05548 1.82077 5.9175 1.82077C4.77952 1.82077 3.81223 2.21906 3.01565 3.01565C2.21906 3.81223 1.82077 4.77952 1.82077 5.9175C1.82077 7.05548 2.21906 8.02276 3.01565 8.81935C3.81223 9.61593 4.77952 10.0142 5.9175 10.0142Z"
+                            fill="#BB8703" />
+                    </svg>
+                    </div>
+                </label>
+
+                <label class="flex-item required">SPID
+                    <div class="input-container">
+                        <input type="text" name="spidDoadora" required>
+                        <svg class="input-icon" onclick="alert('Ícone clicado!')" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.9175 11.835C4.26363 11.835 2.86392 11.2622 1.71835 10.1166C0.572783 8.97108 0 7.57136 0 5.9175C0 4.26363 0.572783 2.86392 1.71835 1.71835C2.86392 0.572783 4.26363 0 5.9175 0C7.57136 0 8.97108 0.572783 10.1166 1.71835C11.2622 2.86392 11.835 4.26363 11.835 5.9175C11.835 6.58511 11.7288 7.21479 11.5164 7.80654C11.3039 8.39829 11.0156 8.92176 10.6515 9.37696L15.7496 14.4751C15.9165 14.642 16 14.8544 16 15.1124C16 15.3703 15.9165 15.5827 15.7496 15.7496C15.5827 15.9165 15.3703 16 15.1124 16C14.8544 16 14.642 15.9165 14.4751 15.7496L9.37696 10.6515C8.92176 11.0156 8.39829 11.3039 7.80654 11.5164C7.21479 11.7288 6.58511 11.835 5.9175 11.835ZM5.9175 10.0142C7.05548 10.0142 8.02276 9.61593 8.81935 8.81935C9.61593 8.02276 10.0142 7.05548 10.0142 5.9175C10.0142 4.77952 9.61593 3.81223 8.81935 3.01565C8.02276 2.21906 7.05548 1.82077 5.9175 1.82077C4.77952 1.82077 3.81223 2.21906 3.01565 3.01565C2.21906 3.81223 1.82077 4.77952 1.82077 5.9175C1.82077 7.05548 2.21906 8.02276 3.01565 8.81935C3.81223 9.61593 4.77952 10.0142 5.9175 10.0142Z"
+                            fill="#BB8703" />
+                    </svg>
+                    </div>
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="continuacao-portabilidade" name="continuacaoPortabilidade">
+                <label for="continuacao-portabilidade">Permite Continuação de Portabilidade</label>
+            </div>
+
+            <label>Motivo de Não Autorização
+                <select name="motivoNaoAutorizacao">
+                    <option value="" selected>Selecione</option>
+                    <option value="Motivo1">Motivo 1</option>
+                    <option value="Motivo2">Motivo 2</option>
+                </select>
+            </label>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="autorizado" name="autorizado">
+                <label for="autorizado">Autorizado</label>
+            </div>
+        </div>
+
+        <div class="coluna">
+            <h2>Rede</h2>
+
+            <label>CNL da Doadora
+                <select name="cnlDoadora">
+                    <option value="" selected>Selecione</option>
+                    <option value="CNL1">CNL 1</option>
+                    <option value="CNL2">CNL 2</option>
+                </select>
+            </label>
+
+
+
+            <section class="dados-cliente">
+                <h2>Dados do Cliente</h2>
+
+                <div class="tabs">
+                    <button type="button" class="tab">
+                        Info. F/E Rec.
+                    </button>
+
+                </div>
+
+                <div class="tab-content">
+
+                    <div>
+                        <div class="row">
+                            <div class="input-group flex-item">
+                                <label for="indicaFraude">Indica Fraude/Erro</label>
+                                <select id="indicaFraude" name="indicaFraude">
+                                    <option value="Regular" selected>Regular</option>
+                                    <option value="Fraude">Fraude</option>
+                                    <option value="Erro">Erro</option>
+                                </select>
+                            </div>
+                            <div class="input-group flex-item">
+                                <label for="justificativaFraudeRec">Justificativa Fraude/Erro</label>
+                                <input id="justificativaFraudeRec" type="text"
+                                    placeholder="Justificativa Fraude/Erro"/>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="idBpFraudeRec">ID do BP Fraude/Erro</label>
+                            <input id="idBpFraudeRec" type="text"
+                                placeholder="ID do BP Fraude/Erro"/>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="ajustarDataRec"/>
+                            <label for="ajustarDataRec">Ajustar Data Devida (de Agendamento)</label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="actions">
+                <button type="reset" class="btn cleanbtn">LIMPAR</button>
+                <button type="submit" class="btn submitbtn">SUBMETER</button>
+            </div>
+        </div>
+
+
+    </form>
 </section>

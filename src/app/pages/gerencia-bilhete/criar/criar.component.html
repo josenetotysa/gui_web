@@ -222,9 +222,10 @@
 
                 <div class="tab-content">
 
-                   <div *ngIf="abaSelecionada === 'cliente'">
+                    <div *ngIf="abaSelecionada === 'cliente'">
                         <div class="radio-group">
-                            <input type="radio" id="cpf" name="tipoDoc" value="CPF" [(ngModel)]="documentoSelecionado" checked>
+                            <input type="radio" id="cpf" name="tipoDoc" value="CPF" [(ngModel)]="documentoSelecionado"
+                                checked>
                             <label for="cpf">CPF</label>
                             <input type="radio" id="cnpj" name="tipoDoc" value="CNPJ"
                                 [(ngModel)]="documentoSelecionado">
@@ -235,7 +236,7 @@
                             <label for="cpfInput">CPF</label>
                             <input id="cpfInput" type="text" placeholder="Digite o CPF" />
                         </div>
- 
+
                         <div *ngIf="documentoSelecionado === 'CNPJ'" class="input-group">
                             <label for="cnpjInput">CNPJ</label>
                             <input id="cnpjInput" type="text" placeholder="Digite o CNPJ" />
@@ -302,9 +303,9 @@
             </section>
 
             <div class="actions">
-                <button type="button" class="btn limpar" (click)="limparTodosFormularios()">LIMPAR</button>
+                <button type="button" class="btn cleanbtn" (click)="limparTodosFormularios()">LIMPAR</button>
 
-                <button type="button" class="btn submeter" (click)="onSubmit()">SUBMETER</button>
+                <button type="button" class="btn submitaction" (click)="onSubmit()">SUBMETER</button>
             </div>
         </div>
     </form>
