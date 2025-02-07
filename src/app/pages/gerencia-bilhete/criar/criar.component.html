@@ -190,14 +190,14 @@
 
             <div class="row">
                 <label class="flex-item required">RN1 <input type="text" name="rn1" required></label>
-                <label class="flex-item required">CNL Receptora <input type="text" name="cnlReceptora"
-                        required></label>
+                <label class="flex-item required">CNL Receptora <input type="text" name="cnlReceptora" required></label>
                 <label class="flex-item required">CNL Doadora <input type="text" name="cnlDoadora"></label>
             </div>
 
             <div class="row">
                 <label class="flex-item required">Receptora <input type="text" name="receptora" required></label>
-                <label class="flex-item required">SPID Receptora <input type="text" name="spidReceptora" required></label>
+                <label class="flex-item required">SPID Receptora <input type="text" name="spidReceptora"
+                        required></label>
             </div>
 
             <section class="dados-cliente">
@@ -221,31 +221,34 @@
 
 
                 <div class="tab-content">
-                    <div *ngIf="abaSelecionada === 'cliente'">
-                        <!-- <div class="radio-group">
-                            <input type="radio" id="cpf" name="tipoDoc" value="CPF" [(ngModel)]="documentoSelecionado">
+
+                   <div *ngIf="abaSelecionada === 'cliente'">
+                        <div class="radio-group">
+                            <input type="radio" id="cpf" name="tipoDoc" value="CPF" [(ngModel)]="documentoSelecionado" checked>
                             <label for="cpf">CPF</label>
-                            <input type="radio" id="cnpj" name="tipoDoc" value="CNPJ" [(ngModel)]="documentoSelecionado">
+                            <input type="radio" id="cnpj" name="tipoDoc" value="CNPJ"
+                                [(ngModel)]="documentoSelecionado">
                             <label for="cnpj">CNPJ</label>
                         </div>
-                        
+
                         <div *ngIf="documentoSelecionado === 'CPF'" class="input-group">
                             <label for="cpfInput">CPF</label>
-                            <input id="cpfInput" type="text" [(ngModel)]="cpf" placeholder="Digite o CPF" />
+                            <input id="cpfInput" type="text" placeholder="Digite o CPF" />
                         </div>
-                        
+ 
                         <div *ngIf="documentoSelecionado === 'CNPJ'" class="input-group">
                             <label for="cnpjInput">CNPJ</label>
-                            <input id="cnpjInput" type="text" [(ngModel)]="cnpj" placeholder="Digite o CNPJ" />
+                            <input id="cnpjInput" type="text" placeholder="Digite o CNPJ" />
                         </div>
-                         -->
+
                         <div class="input-group">
                             <label for="nome">Nome</label>
-                            <input id="nome" type="text" [(ngModel)]="nome" placeholder="Digite o nome" />
+                            <input id="nome" type="text" placeholder="Digite o nome" />
                         </div>
+
                         <div class="input-group">
                             <label for="id">ID</label>
-                            <input id="id" type="text" [(ngModel)]="id" placeholder="Digite o ID" />
+                            <input id="id" type="text" placeholder="Digite o ID" />
                         </div>
 
                     </div>
@@ -266,40 +269,32 @@
                                     placeholder="Justificativa Fraude/Erro" />
                             </div>
                         </div>
-                            <div class="input-group">
-                                <label for="idBpFraudeRec">ID do BP Fraude/Erro</label>
-                                <input id="idBpFraudeRec" type="text" [(ngModel)]="idBpFraudeRec"
-                                    placeholder="ID do BP Fraude/Erro" />
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="ajustarDataRec" [(ngModel)]="ajustarDataRec" />
-                                <label for="ajustarDataRec">Ajustar Data Devida (de Agendamento)</label>
-                            </div>
-                    </div>
-
-                    <div *ngIf="abaSelecionada === 'fe_doad'">
                         <div class="input-group">
-                            <label for="indicaFraudeDoad">Indica Fraude/Erro</label>
-                            <select id="indicaFraudeDoad" name="indicaFraudeDoad">
-                                <option value="Regular" selected>Regular</option>
-                                <option value="Fraude">Fraude</option>
-                                <option value="Erro">Erro</option>
-                            </select>
-
-                        </div>
-                        <div class="input-group">
-                            <label for="justificativaFraudeDoad">Justificativa Fraude/Erro</label>
-                            <input id="justificativaFraudeDoad" type="text" [(ngModel)]="justificativaFraudeDoad"
-                                placeholder="Justificativa Fraude/Erro" />
-                        </div>
-                        <div class="input-group">
-                            <label for="idBpFraudeDoad">ID do BP Fraude/Erro</label>
-                            <input id="idBpFraudeDoad" type="text" [(ngModel)]="idBpFraudeDoad"
+                            <label for="idBpFraudeRec">ID do BP Fraude/Erro</label>
+                            <input id="idBpFraudeRec" type="text" [(ngModel)]="idBpFraudeRec"
                                 placeholder="ID do BP Fraude/Erro" />
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="ajustarDataDoad" [(ngModel)]="ajustarDataDoad" />
-                            <label for="ajustarDataDoad">Ajustar Data Devida (de Agendamento)</label>
+                            <input type="checkbox" id="ajustarDataRec" [(ngModel)]="ajustarDataRec" />
+                            <label for="ajustarDataRec">Ajustar Data Devida (de Agendamento)</label>
+                        </div>
+                    </div>
+
+                    <div *ngIf="abaSelecionada === 'fe_doad'">
+                        <div class="row">
+                            <div class="input-group flex-item">
+                                <label for="indicaFraude">Indica Fraude/Erro</label>
+                                <select id="indicaFraude" name="indicaFraude">
+                                    <option value="Regular" selected>Regular</option>
+                                    <option value="Fraude">Fraude</option>
+                                    <option value="Erro">Erro</option>
+                                </select>
+                            </div>
+                            <div class="input-group flex-item">
+                                <label for="justificativaFraudeRec">Justificativa Fraude/Erro</label>
+                                <input id="justificativaFraudeRec" type="text" [(ngModel)]="justificativaFraudeRec"
+                                    placeholder="Justificativa Fraude/Erro" />
+                            </div>
                         </div>
                     </div>
 
@@ -307,7 +302,8 @@
             </section>
 
             <div class="actions">
-                <button type="button" class="btn limpar" (click)="limparCampos()">LIMPAR</button>
+                <button type="button" class="btn limpar" (click)="limparTodosFormularios()">LIMPAR</button>
+
                 <button type="button" class="btn submeter" (click)="onSubmit()">SUBMETER</button>
             </div>
         </div>

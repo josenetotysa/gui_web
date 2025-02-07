@@ -13,11 +13,6 @@ export class CriarComponent {
   quantidadeHoras: string = '';
   quantidadeDuracaoExtra: string = '';
   documentoSelecionado: string = 'CPF'; // Ou CNPJ, dependendo do default
-  cpf: string = '';
-  cnpj: string = '';
-  nome: string = '';
-  id: string = '';
-
 
   formatarHoras(valor: string): string {
     let apenasNumeros = valor.replace(/\D/g, ''); // Remove tudo que não for número
@@ -42,16 +37,6 @@ export class CriarComponent {
     return numero.toString().padStart(2, '0') + 'h';
   }
 
-
-
-  constructor(private cd: ChangeDetectorRef) {}
-  
-  // atualizarDocumento(tipo: string) {
-  //   this.documentoSelecionado = tipo;
-  //   this.cd.detectChanges(); // Força a atualização da view
-  // }
-  
-
   onSubmit(): void {
     alert('Formulário enviado com sucesso!');
   }
@@ -61,15 +46,6 @@ export class CriarComponent {
 selecionarAba(aba: string): void {
   this.abaSelecionada = aba;
 }
-
-
-  limparCampos(): void {
-    this.cpf = '';
-    this.cnpj = '';
-    this.nome = '';
-    this.id = '';
-    this.documentoSelecionado = 'CPF';
-  }
 
   indicaFraudeRec: string = 'Regular';
 justificativaFraudeRec: string = '';
@@ -82,4 +58,29 @@ idBpFraudeDoad: string = '';
 ajustarDataDoad: boolean = false;
 
   
+
+limparTodosFormularios(): void {
+  const formularios = document.querySelectorAll('form');
+  
+  formularios.forEach(form => {
+    (form as HTMLFormElement).reset();
+  });
+
+  // Reseta variáveis do componente
+  this.documentoSelecionado = 'CPF';
+  this.abaSelecionada = 'cliente';
+
+  // Resetando valores relacionados ao formulário no TypeScript
+  this.indicaFraudeRec = 'Regular';
+  this.justificativaFraudeRec = '';
+  this.idBpFraudeRec = '';
+  this.ajustarDataRec = false;
+  this.indicaFraudeDoad = 'Regular';
+  this.justificativaFraudeDoad = '';
+  this.idBpFraudeDoad = '';
+  this.ajustarDataDoad = false;
+
+  console.log('Todos os formulários foram limpos.');
+}
+
 }

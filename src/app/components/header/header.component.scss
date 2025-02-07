@@ -57,13 +57,6 @@ header {
     }
 }
 
-#person-icon {
-    background-color: #163e75cc;
-}
-
-.button-icon:hover {
-    background-color: #163e75cc;
-}
 
 .user-profile {
     display: flex;
@@ -74,6 +67,70 @@ header {
     justify-content: center;
     gap: 0.5rem; // 8px → 0.5rem
 }
+
+.logout-color{
+    color: $red-logo;
+}
+
+#logout-color{
+    color: $red-logo;
+}
+
+
+
+
+
+
+
+
+
+
+.notifications {
+    position: relative;
+}
+
+.notifications button {
+    position: relative;
+}
+
+mat-menu {
+    background: white;
+    border-radius: 8px;
+}
+
+mat-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+mat-icon {
+    color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app-navbar {
     padding-left: 9.375rem; // 150px → 9.375rem

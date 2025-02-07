@@ -10,11 +10,6 @@
   .breadcrumb-link {
     text-decoration: none;
     color: $gray-color;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   .breadcrumb-active {

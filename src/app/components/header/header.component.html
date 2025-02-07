@@ -1,20 +1,57 @@
 <header>
     <section class="header-left">
-        <!-- Logo -->
         <a rou><img src="assets/svg/logo_tysa.svg" alt="Logo TYSA"></a>
-        <!-- Navegação (pode ser adicionada no futuro) -->
         <app-navbar></app-navbar>
     </section>
 
     <section class="header-right">
-        <button type="button" class="button-icon">
-            <img src="assets/svg/notifications_30dp_FFFFFF.svg" alt="Notification Icon">
-        </button>
-            <div class="user-profile">
-                <button type="button" class="button-icon" id="person-icon">
-                    <img src="assets/svg/person_30dp_FFFFFF.svg" alt="Person Icon">
-                </button>
-                <span class="user-name">User2515</span>
-            </div>
+        <!-- Ícone de notificações com menu -->
+        <div class="notifications">
+            <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
+                <img src="assets/svg/notifications_30dp_FFFFFF.svg" alt="Notification Icon">
+            </button>
+        </div>
+
+        <mat-menu #notificationsMenu="matMenu">
+            <button mat-menu-item disabled>
+                <strong>Notificações</strong>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>info</mat-icon>
+                <span>Nova atualização disponível!</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>check_circle</mat-icon>
+                <span>Seu relatório foi aprovado.</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>clear_all</mat-icon>
+                <span>Limpar notificações</span>
+            </button>
+        </mat-menu>
+
+        <!-- Ícone do usuário com menu -->
+        <div class="user-profile">
+            <button mat-icon-button [matMenuTriggerFor]="userMenu">
+                <img src="assets/svg/person_30dp_FFFFFF.svg" alt="Person Icon">
+            </button>
+            <span class="user-name">User2515</span>
+        </div>
+
+        <!-- Definição do menu -->
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Perfil: User2515</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>business</mat-icon>
+                <span>Configurações</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon id="logout-color">exit_to_app</mat-icon>
+                <span class="logout-color">Sair</span>
+            </button>
+        </mat-menu>
     </section>
 </header>
