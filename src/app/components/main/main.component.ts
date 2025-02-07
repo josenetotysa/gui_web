@@ -9,6 +9,17 @@ import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
+/**
+ * Componente principal da aplicação.
+ * 
+ * Este componente atua como o contêiner principal para exibição das páginas dentro do layout principal.
+ * Ele inclui o `BreadcrumbComponent` para mostrar a trilha de navegação.
+ */
 export class MainComponent {
+
+  /**
+   * Construtor do componente.
+   */
+  constructor() {}
 
 }

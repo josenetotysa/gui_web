@@ -6,7 +6,20 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { provideToastr } from 'ngx-toastr';
 
+/**
+ * Configuração principal da aplicação.
+ * 
+ * Este objeto define os provedores utilizados globalmente no Angular, incluindo:
+ * - Configuração de roteamento (`provideRouter`)
+ * - Animações assíncronas (`provideAnimationsAsync`)
+ * - Máscaras (`provideEnvironmentNgxMask`)
+ * - Notificações (`provideToastr`)
+ */
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), provideEnvironmentNgxMask(), provideToastr(),
+  providers: [
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideEnvironmentNgxMask(),
+    provideToastr(),
   ]
 };

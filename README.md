@@ -1,11 +1,16 @@
 # Projeto Angular - GUI Web
 
-## Sobre o Projeto
-Este é um projeto desenvolvido em **Angular 17** utilizando **Standalone Components**, **Lazy Loading**, **Guards de Autenticação** e **Angular Material**.
+Este projeto é uma aplicação web desenvolvida para TYSA Telecomonicacoes em **Angular 17** que atua como uma interface intermediária entre os usuários e a API do **NPAC (Number Portability Administration Center)**, gerenciado pela **ABR Telecom**. 
 
-A aplicação é modularizada, garantindo organização e escalabilidade. As rotas são protegidas pelo **authGuard**, e o sistema de autenticação armazena tokens no `localStorage`. 
+A aplicação permite que múltiplas contas de usuário acessem e interajam com a API do NPAC, superando a limitação de uma única conta presente no sistema original.
 
-Além disso, o projeto conta com documentação automatizada utilizando **Compodoc**.
+---
+## Funcionalidades
+
+- **Autenticação de Usuários:** Sistema de login seguro com armazenamento de tokens no `localStorage`.
+- **Gerenciamento de Bilhetes:** Criação, liberação e consulta de bilhetes de portabilidade.
+- **Consulta de CNG Pré-existente:** Verificação de números de portabilidade existentes.
+- **Listagem de Janelas de Broadcast:** Visualização das janelas de broadcast disponíveis.
 
 ---
 
@@ -175,3 +180,8 @@ Para compilar a aplicação para produção, utilize:
 ng build --configuration=production
 ```
 O código otimizado será gerado na pasta `dist`.
+
+---
+## Licença
+
+&copy; 2025 TYSA TELECOMUNICACOES LTDA. Todos os direitos reservados.
