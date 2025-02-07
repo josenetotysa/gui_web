@@ -13,12 +13,26 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
+/**
+ * Componente responsável pelo cabeçalho da aplicação.
+ * 
+ * O cabeçalho inclui um menu de navegação e a opção de logout.
+ */
 export class HeaderComponent {
 
-    constructor(private authService: AuthService, private router: Router) { }
-  
-    logout() {
-      this.authService.logout();
-      this.router.navigate(['/login']);
-    }
+  /**
+   * Construtor do componente.
+   * 
+   * @param {AuthService} authService - Serviço de autenticação para gerenciar login e logout.
+   * @param {Router} router - Serviço de roteamento do Angular para navegação.
+   */
+  constructor(private authService: AuthService, private router: Router) { }
+
+  /**
+   * Realiza o logout do usuário e redireciona para a tela de login.
+   */
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

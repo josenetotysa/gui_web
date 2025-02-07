@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importação necessária
 import { FormsModule } from '@angular/forms';
-import { ChangeDetectorRef } from '@angular/core';
+
 @Component({
   selector: 'app-criar',
   standalone: true,
@@ -9,11 +9,76 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './criar.component.html',
   styleUrl: './criar.component.scss'
 })
+/**
+ * Componente responsável pela criação de novos registros no sistema.
+ */
 export class CriarComponent {
+  /**
+   * Quantidade de horas informada pelo usuário.
+   */
   quantidadeHoras: string = '';
-  quantidadeDuracaoExtra: string = '';
-  documentoSelecionado: string = 'CPF'; // Ou CNPJ, dependendo do default
 
+  /**
+   * Duração extra informada pelo usuário.
+   */
+  quantidadeDuracaoExtra: string = '';
+
+  /**
+   * Tipo de documento selecionado pelo usuário. Pode ser 'CPF' ou 'CNPJ'.
+   */
+  documentoSelecionado: string = 'CPF';
+
+  /**
+   * Aba atualmente selecionada no formulário.
+   */
+  abaSelecionada: string = 'cliente';
+
+  /**
+   * Status da indicação de fraude para o receptor.
+   */
+  indicaFraudeRec: string = 'Regular';
+
+  /**
+   * Justificativa da fraude no receptor.
+   */
+  justificativaFraudeRec: string = '';
+
+  /**
+   * Identificador do BP do receptor relacionado à fraude.
+   */
+  idBpFraudeRec: string = '';
+
+  /**
+   * Indica se a data do receptor deve ser ajustada.
+   */
+  ajustarDataRec: boolean = false;
+
+  /**
+   * Status da indicação de fraude para o doador.
+   */
+  indicaFraudeDoad: string = 'Regular';
+
+  /**
+   * Justificativa da fraude no doador.
+   */
+  justificativaFraudeDoad: string = '';
+
+  /**
+   * Identificador do BP do doador relacionado à fraude.
+   */
+  idBpFraudeDoad: string = '';
+
+  /**
+   * Indica se a data do doador deve ser ajustada.
+   */
+  ajustarDataDoad: boolean = false;
+
+  /**
+   * Formata um valor de horas inserido pelo usuário.
+   * 
+   * @param {string} valor - O valor digitado pelo usuário.
+   * @returns {string} - O valor formatado no padrão 'hh'.
+   */
   formatarHoras(valor: string): string {
     let apenasNumeros = valor.replace(/\D/g, ''); // Remove tudo que não for número
 
@@ -37,50 +102,46 @@ export class CriarComponent {
     return numero.toString().padStart(2, '0') + 'h';
   }
 
+  /**
+   * Define a aba selecionada no formulário.
+   * 
+   * @param {string} aba - Nome da aba a ser ativada.
+   */
+  selecionarAba(aba: string): void {
+    this.abaSelecionada = aba;
+  }
+
+  /**
+   * Envia os dados do formulário.
+   */
   onSubmit(): void {
     alert('Formulário enviado com sucesso!');
   }
 
-  abaSelecionada: string = 'cliente';
+  /**
+   * Limpa todos os formulários da tela e redefine as variáveis do componente.
+   */
+  limparTodosFormularios(): void {
+    const formularios = document.querySelectorAll('form');
 
-selecionarAba(aba: string): void {
-  this.abaSelecionada = aba;
-}
+    formularios.forEach(form => {
+      (form as HTMLFormElement).reset();
+    });
 
-  indicaFraudeRec: string = 'Regular';
-justificativaFraudeRec: string = '';
-idBpFraudeRec: string = '';
-ajustarDataRec: boolean = false;
+    // Reseta variáveis do componente
+    this.documentoSelecionado = 'CPF';
+    this.abaSelecionada = 'cliente';
 
-indicaFraudeDoad: string = 'Regular';
-justificativaFraudeDoad: string = '';
-idBpFraudeDoad: string = '';
-ajustarDataDoad: boolean = false;
+    // Resetando valores relacionados ao formulário no TypeScript
+    this.indicaFraudeRec = 'Regular';
+    this.justificativaFraudeRec = '';
+    this.idBpFraudeRec = '';
+    this.ajustarDataRec = false;
+    this.indicaFraudeDoad = 'Regular';
+    this.justificativaFraudeDoad = '';
+    this.idBpFraudeDoad = '';
+    this.ajustarDataDoad = false;
 
-  
-
-limparTodosFormularios(): void {
-  const formularios = document.querySelectorAll('form');
-  
-  formularios.forEach(form => {
-    (form as HTMLFormElement).reset();
-  });
-
-  // Reseta variáveis do componente
-  this.documentoSelecionado = 'CPF';
-  this.abaSelecionada = 'cliente';
-
-  // Resetando valores relacionados ao formulário no TypeScript
-  this.indicaFraudeRec = 'Regular';
-  this.justificativaFraudeRec = '';
-  this.idBpFraudeRec = '';
-  this.ajustarDataRec = false;
-  this.indicaFraudeDoad = 'Regular';
-  this.justificativaFraudeDoad = '';
-  this.idBpFraudeDoad = '';
-  this.ajustarDataDoad = false;
-
-  console.log('Todos os formulários foram limpos.');
-}
-
+    console.log('Todos os formulários foram limpos.');
+  }
 }

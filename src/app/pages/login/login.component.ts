@@ -11,21 +11,47 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
+/**
+ * Componente responsável pela autenticação do usuário.
+ * Permite o login e armazenamento dos dados de acesso caso o usuário escolha a opção "Lembrar-me".
+ */
 export class LoginComponent implements OnInit {
+  /**
+   * Nome de usuário digitado pelo usuário.
+   */
   username: string = '';
+
+  /**
+   * Senha digitada pelo usuário.
+   */
   password: string = '';
+
+  /**
+   * Indica se o usuário deseja que suas credenciais sejam lembradas.
+   */
   rememberMe: boolean = false;
 
+  /**
+   * Construtor do componente.
+   * 
+   * @param {AuthService} authService - Serviço de autenticação.
+   * @param {Router} router - Serviço de roteamento Angular.
+   * @param {ToastrService} toastr - Serviço para exibição de notificações.
+   */
   constructor(
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService  // Toastr adicionado
+    private toastr: ToastrService
   ) {}
 
+  /**
+   * Método de ciclo de vida chamado ao inicializar o componente.
+   * Recupera as credenciais salvas no `localStorage`, se existirem.
+   */
   ngOnInit() {
     const savedUsername = localStorage.getItem('savedUsername') || '';
     const savedPassword = localStorage.getItem('savedPassword') || '';
-    
+
     if (savedUsername && savedPassword) {
       this.username = savedUsername;
       this.password = savedPassword;
@@ -34,6 +60,11 @@ export class LoginComponent implements OnInit {
     console.log("Valores recuperados:", this.username, this.password);
   }
 
+  /**
+   * Realiza a autenticação do usuário.
+   * Se a opção "Lembrar-me" estiver ativada, salva as credenciais no `localStorage`.
+   * Se houver falha no login, exibe uma mensagem de erro.
+   */
   login() {
     if (!this.username || !this.password) {
       this.toastr.error('Preencha todos os campos para continuar.', 'Erro de Login', {

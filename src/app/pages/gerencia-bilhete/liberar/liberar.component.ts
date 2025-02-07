@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './liberar.component.html',
   styleUrl: './liberar.component.scss'
 })
+/**
+ * Componente responsável pela funcionalidade de liberação de algum recurso no sistema.
+ */
 export class LiberarComponent {
+
+  /**
+   * Construtor do componente.
+   */
+  constructor() {}
 
 }

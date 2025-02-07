@@ -10,6 +10,16 @@ import { LoginComponent } from '../../pages/login/login.component';
   templateUrl: './login-layout.component.html',
   styleUrl: './login-layout.component.scss'
 })
+/**
+ * Componente responsável pelo layout da página de login.
+ * 
+ * Este layout contém o `LoginComponent` e gerencia a exibição da página de autenticação.
+ */
 export class LoginLayoutComponent {
+
+  /**
+   * Construtor do componente.
+   */
+  constructor() {}
 
 }
